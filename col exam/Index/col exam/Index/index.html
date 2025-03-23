@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hulk Gym</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="logo">🏋️‍♂️ Hulk Gym</div>
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT CLUB</a></li>
+            <li><a href="#contact">BLOG</a></li>
+            <li><a href="/Index/free.html" class="free-btn" target="_blank">FREE PLAN</a></li>
+        </ul>
+
+        <button id="login-btn">LOGIN</button>
+</nav>
+
+<!-- Login Modal (Hidden by Default) -->
+<div id="login-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+
+            <input type="username" placeholder="Enter your Username" required>
+            <input type="email" placeholder="Enter your Email" required>
+            <input type="tel" placeholder="Enter your Phone Number" required>
+            <input type="password" placeholder="Create a Password" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <img src="/Index/Hulk Gym/6.jpg" alt="Gym">
+        <div class="overlay">
+            <h1>HULK GYM</h1>
+            <p>Welcome to the best fitness club in town!</p>
+        </div>
+    </section>
+
+    <!-- About Club Section -->
+    <section id="about" class="section">
+        <img src="/Index/Hulk Gym/2.jpg" alt="About Gym">
+        <div class="overlay">
+            <!-- <h1>ABOUT CLUB</h1>
+            <p>We provide top-notch training facilities.</p> -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <img src="/Index/Hulk Gym/4.jpg" alt="Contact Gym">
+        <div class="overlay">
+            <!-- <h1>CONTACT</h1>
+            <p>Get in touch with us today!</p> -->
+        </div>
+    </section>
+<!-- Location Section -->
+<section id="location" class="section">
+    <div class="overlay">
+        <h1>OUR LOCATION - TASHKENT</h1>
+    </div>
+    <iframe
+        src="iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2998.2969935779315!2d69.17554626424865!3d41.28064032528147!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2s!4v1741705022214!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">"
+        width="100%" height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
+</section>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
