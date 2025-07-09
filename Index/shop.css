@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+  }
+  header {
+    background-color: #044317;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header h1 {
+    margin: 0;
+  }
+  .search-bar input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+  }
+  .categories {
+    display: flex;
+    overflow-x: auto;
+    background-color: white;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .category-item {
+    padding: 0.5rem 1rem;
+    background-color: #efefef;
+    border-radius: 20px;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+  .card-body {
+    padding: 1rem;
+  }
+  .card-body h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+  }
+  .card-body p {
+    font-weight: bold;
+    color: #ff9419;
+  }
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .btn {
+    padding: 0.4rem 0.8rem;
+    background: #034c33;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .heart {
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: #ccc;
+  }
+  .heart.active {
+    color: red;
+  }
