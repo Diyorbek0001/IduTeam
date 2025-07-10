@@ -1,0 +1,64 @@
+
+
+
+--scheme/attendance.sql
+CREATE TABLE attendance (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    date DATE NOT NULL,
+    status VARCHAR(10) DEFAULT 'present',
+    CHECK (status IN ('present', 'absent')),
+    UNIQUE(user_id, date)
+);
+
+
+
+
+
+--schema/rankings.sql
+CREATE TABLE rankings (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    month_start DATE NOT NULL,
+    visit_count INTEGER NOT NULL,
+    rank INTEGER NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(user_id, month_start)
+);
+
+
+
+
+
+
+--functions/insert_monthly_rankings.sql
+CREATE OR REPLACE FUNCTION insert_monthly_rankings()
+RETURNS void AS $$
+BEGIN
+  WITH monthly_counts AS (
+    SELECT 
+      user_id,
+      DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month') AS month_start,
+      COUNT(*) AS visit_count
+    FROM attendance
+    WHERE status = 'present'
+      AND date >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month')
+      AND date < DATE_TRUNC('month', CURRENT_DATE)
+    GROUP BY user_id
+  ),
+  ranked AS (
+    SELECT 
+      user_id,
+      month_start,
+      visit_count,
+      RANK() OVER (ORDER BY visit_count DESC) AS rank
+    FROM monthly_counts
+  )
+  INSERT INTO rankings (user_id, month_start, visit_count, rank)
+  SELECT user_id, month_start, visit_count, rank
+  FROM ranked
+  ON CONFLICT (user_id, month_start) DO NOTHING;
+END;
+$$ LANGUAGE plpgsql;
+
+
