@@ -62,3 +62,99 @@ END;
 $$ LANGUAGE plpgsql;
 
 
+
+
+
+
+--Data/insert_users.sql
+INSERT INTO users (id, username, email, password, gender, height, weight, phone_number) VALUES
+(1, 'john_doe', 'john.doe@example.com', 'pass1234', true, 175, 70, '+998901234567'),
+(2, 'alice_smith', 'alice.smith@example.com', 'alice2025', false, 165, 60, '+998902345678'),
+(3, 'bob_jones', 'bob.jones@example.com', 'bobsecure', true, 180, 85, '+998903456789'),
+(4, 'emma_wilson', 'emma.wilson@example.com', 'emma!pass', false, 160, 55, '+998904567890'),
+(5, 'michael_brown', 'michael.brown@example.com', 'mike2024', true, 178, 75, '+998905678901'),
+(6, 'sophia_taylor', 'sophia.taylor@example.com', 'sophia#123', false, 170, 65, '+998906789012'),
+(7, 'david_clark', 'david.clark@example.com', 'davidpass', true, 182, 80, '+998907890123'),
+(8, 'olivia_lewis', 'olivia.lewis@example.com', 'olivia2025', false, 168, 58, '+998908901234'),
+(9, 'james_martin', 'james.martin@example.com', 'jamespass', true, 176, 72, '+998909012345'),
+(10, 'mia_lee', 'mia.lee@example.com', 'miapass', false, 162, 54, '+998901234890'),
+(11, 'william_hall', 'william.hall@example.com', 'willpass', true, 177, 78, '+998902345901'),
+(12, 'isabella_allen', 'isabella.allen@example.com', 'isabellapass', false, 165, 61, '+998903456012'),
+(13, 'logan_young', 'logan.young@example.com', 'loganpass', true, 181, 83, '+998904567123'),
+(14, 'ava_hernandez', 'ava.hernandez@example.com', 'avapass', false, 169, 59, '+998905678234'),
+(15, 'lucas_king', 'lucas.king@example.com', 'lucaspass', true, 179, 76, '+998906789345'),
+(16, 'charlotte_wright', 'charlotte.wright@example.com', 'charlotte123', false, 164, 57, '+998907890456'),
+(17, 'mason_scott', 'mason.scott@example.com', 'masonpass', true, 183, 82, '+998908901567'),
+(18, 'amelia_green', 'amelia.green@example.com', 'ameliapass', false, 167, 60, '+998909012678'),
+(19, 'ethan_adams', 'ethan.adams@example.com', 'ethanpass', true, 175, 74, '+998901234789'),
+(20, 'harper_baker', 'harper.baker@example.com', 'harperpass', false, 161, 55, '+998902345890'),
+(21, 'alexander_nelson', 'alexander.nelson@example.com', 'alexpass', true, 180, 79, '+998903456901'),
+(22, 'ella_carter', 'ella.carter@example.com', 'ellapass', false, 166, 58, '+998904567012'),
+(23, 'daniel_mitchell', 'daniel.mitchell@example.com', 'danielpass', true, 178, 77, '+998905678123'),
+(24, 'zoey_roberts', 'zoey.roberts@example.com', 'zoeypass', false, 163, 56, '+998906789234'),
+(25, 'jack_evans', 'jack.evans@example.com', 'jackpass', true, 182, 81, '+998907890345'),
+(26, 'lily_turner', 'lily.turner@example.com', 'lilypass', false, 168, 59, '+998908901456'),
+(27, 'oliver_perez', 'oliver.perez@example.com', 'oliverpass', true, 177, 75, '+998909012567'),
+(28, 'scarlett_morris', 'scarlett.morris@example.com', 'scarlettpass', false, 165, 60, '+998901234678'),
+(29, 'jacob_murphy', 'jacob.murphy@example.com', 'jacobpass', true, 179, 77, '+998902345789'),
+(30, 'natalie_cole', 'natalie.cole@example.com', 'nataliepass', false, 164, 58, '+998903456890');
+
+
+
+
+
+--Data/insert_attendance.sql
+INSERT INTO attendance (user_id, date, status) VALUES
+(1, '2025-07-01', 'present'),
+(1, '2025-07-02', 'present'),
+(2, '2025-07-01', 'absent'),
+(2, '2025-07-02', 'present'),
+(3, '2025-07-01', 'present'),
+(3, '2025-07-02', 'present'),
+(4, '2025-07-01', 'present'),
+(5, '2025-07-03', 'present'),
+(6, '2025-07-01', 'absent'),
+(6, '2025-07-02', 'present'),
+(7, '2025-07-01', 'present'),
+(8, '2025-07-04', 'present'),
+(9, '2025-07-01', 'present'),
+(10, '2025-07-01', 'absent'),
+(11, '2025-07-01', 'present'),
+(12, '2025-07-02', 'present'),
+(13, '2025-07-03', 'present'),
+(14, '2025-07-04', 'absent'),
+(15, '2025-07-05', 'present'),
+(16, '2025-07-05', 'present'),
+(17, '2025-07-01', 'present'),
+(18, '2025-07-02', 'present'),
+(19, '2025-07-03', 'present'),
+(20, '2025-07-04', 'present'),
+(21, '2025-07-05', 'absent'),
+(22, '2025-07-01', 'present'),
+(23, '2025-07-02', 'present'),
+(24, '2025-07-03', 'present'),
+(25, '2025-07-04', 'present'),
+(26, '2025-07-05', 'present'),
+(27, '2025-07-01', 'present'),
+(28, '2025-07-02', 'absent'),
+(29, '2025-07-03', 'present'),
+(30, '2025-07-04', 'present');
+
+
+
+
+
+--Data/insert_rankings.sql
+INSERT INTO rankings (user_id, month_start, visit_count, rank) VALUES
+(1, '2025-07-01', 20, 1),
+(3, '2025-07-01', 18, 2),
+(7, '2025-07-01', 15, 3),
+(5, '2025-07-01', 14, 4),
+(9, '2025-07-01', 13, 5),
+(10, '2025-07-01', 12, 6),
+(15, '2025-07-01', 11, 7),
+(6, '2025-07-01', 10, 8),
+(12, '2025-07-01', 9, 9),
+(8, '2025-07-01', 8, 10);
+
+
